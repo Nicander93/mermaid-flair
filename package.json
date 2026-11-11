@@ -28,5 +28,15 @@
     "roughjs": "4.6.6",
     "typescript": "5.9.3",
     "yazl": "2.5.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nicander93/mermaid-flair.git"
+  },
+  "homepage": "https://github.com/Nicander93/mermaid-flair#readme",
+  "bugs": {
+    "url": "https://github.com/Nicander93/mermaid-flair/issues"
+  },
+  "author": "Nicander",
+  "license": "MIT"
 }
