@@ -1,5 +1,7 @@
 # Mermaid Flair
 
+[![CI](https://github.com/Nicander93/mermaid-flair/actions/workflows/ci.yml/badge.svg)](https://github.com/Nicander93/mermaid-flair/actions/workflows/ci.yml)
+
 简体中文 · [English](README.en.md)
 
 让 Markdown 中的 Mermaid 图表更易读。在 VS Code、Cursor 的普通预览和 Obsidian 阅读视图里，自动应用主题、协调配色与轻微手绘轮廓，并支持放大、选择和复制图像。
@@ -8,7 +10,7 @@
 
 [查看亮色效果](docs/images/whiteboard-light.png) · [查看示例源码](fixtures/mermaid/quick-start.md)
 
-> 当前版本为开发预览版 **0.5.2**，尚未上架插件商店。公开分发以仓库源码和插件安装包为主。若仓库尚无 Release，请先按下方说明从源码构建。
+> **公开预览版 0.5.2**：[下载安装包](https://github.com/Nicander93/mermaid-flair/releases/tag/0.5.2)。尚未上架插件商店；当前以 GitHub Release 分发。
 
 ## 能做什么
 
@@ -21,7 +23,7 @@
 
 ## 安装
 
-发布后的安装包从[Releases](https://github.com/Nicander93/mermaid-flair/releases)获取。源码压缩包不包含编译好的插件；没有 Release 时可[从源码构建](#从源码构建)。
+安装包从[Releases](https://github.com/Nicander93/mermaid-flair/releases)获取。源码压缩包不包含编译好的插件；没有 Release 时可[从源码构建](#从源码构建)。
 
 ### VS Code / Cursor
 

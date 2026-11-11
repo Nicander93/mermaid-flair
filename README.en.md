@@ -1,5 +1,7 @@
 # Mermaid Flair
 
+[![CI](https://github.com/Nicander93/mermaid-flair/actions/workflows/ci.yml/badge.svg)](https://github.com/Nicander93/mermaid-flair/actions/workflows/ci.yml)
+
 [简体中文](README.md) · English
 
 Make Mermaid diagrams easier to read in Markdown. Mermaid Flair adds coordinated colors, curated themes, subtle hand-drawn outlines, zoom, selection and image copying to regular VS Code / Cursor previews and Obsidian Reading View.
@@ -8,7 +10,7 @@ Make Mermaid diagrams easier to read in Markdown. Mermaid Flair adds coordinated
 
 [Light preview](docs/images/whiteboard-light.png) · [Diagram source](fixtures/mermaid/quick-start.md)
 
-> **0.5.2 is a development preview.** The plugins are not yet listed in extension stores. Distribution is focused on the public source repository and installable plugins. If no Release is available, build from source below.
+> **Public preview 0.5.2**: [Download plugin assets](https://github.com/Nicander93/mermaid-flair/releases/tag/0.5.2). Distribution is through GitHub Releases; the plugins are not yet listed in extension stores.
 
 ## Features
 
@@ -21,7 +23,7 @@ Make Mermaid diagrams easier to read in Markdown. Mermaid Flair adds coordinated
 
 ## Install
 
-Published plugin assets will be available from the [Releases page](https://github.com/Nicander93/mermaid-flair/releases). Source archives do not contain compiled plugins. If no Release exists, use the source build instructions below.
+Plugin assets are available from the [Releases page](https://github.com/Nicander93/mermaid-flair/releases). Source archives do not contain compiled plugins. If no Release exists, use the source build instructions below.
 
 ### VS Code / Cursor
 
