@@ -1,0 +1,9 @@
+packages:
+  - apps/*
+  - packages/*
+
+nodeLinker: hoisted
+storeDir: .cache/pnpm
+allowBuilds:
+  '@vscode/vsce-sign': false
+  esbuild: true

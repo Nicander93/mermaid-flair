@@ -1,0 +1,78 @@
+.flair-render-stage, .flair-render-frame {
+  position: fixed; inset: 0 auto auto -12000px; width: 1000px; height: 700px;
+  visibility: hidden; pointer-events: none; border: 0;
+}
+.flair-diagram {
+  position: relative; box-sizing: border-box; margin: 1rem 0; padding: 1rem;
+  border: 1px solid color-mix(in srgb, var(--flair-border) 20%, transparent);
+  border-radius: 10px; background: var(--flair-paper); color: var(--flair-text);
+}
+.flair-inline-surface { display: block; max-width: 100%; margin: auto; user-select: none; }
+.flair-diagram-tools {
+  position: absolute; z-index: 2; top: 7px; right: 7px; display: flex; gap: 4px;
+  opacity: 0; pointer-events: none; transition: opacity 120ms;
+}
+.flair-diagram:hover .flair-diagram-tools, .flair-diagram:focus-within .flair-diagram-tools { opacity: 1; pointer-events: auto; }
+.flair-diagram-tools[hidden] { display: none; }
+.flair-diagram-tools button, .flair-viewer-tools button {
+  display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px;
+  padding: 5px; border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  border-radius: 6px; color: inherit; background: color-mix(in srgb, var(--flair-paper, Canvas) 90%, transparent);
+  box-shadow: none; cursor: pointer;
+}
+.flair-diagram-tools svg, .flair-viewer-tools svg { width: 18px; height: 18px; flex: none; }
+.flair-diagram-tools button:hover, .flair-viewer-tools button:hover { background: color-mix(in srgb, currentColor 12%, var(--flair-paper, Canvas)); }
+.flair-diagram-tools button[data-copied] { color: var(--flair-selection-color); }
+.flair-diagram button:disabled, .flair-viewer button:disabled { opacity: 0.4; cursor: default; }
+.flair-diagram:focus-visible, .flair-diagram button:focus-visible, .flair-viewer button:focus-visible, .flair-context-menu button:focus-visible {
+  outline: 2px solid var(--flair-selection-color, Highlight); outline-offset: 2px;
+}
+.flair-status:empty { display: none; }
+.flair-status { font-size: 0.9em; overflow-wrap: anywhere; padding: 8px 0; }
+.flair-error { padding: 8px 0; }
+.flair-error details { margin-top: 6px; }
+.flair-error summary { cursor: pointer; opacity: 0.7; }
+.flair-error pre { white-space: pre-wrap; max-height: 14rem; overflow: auto; font: inherit; }
+.flair-viewer {
+  position: fixed; inset: 20px; box-sizing: border-box; width: calc(100% - 40px); height: calc(100% - 40px);
+  max-width: none; max-height: none; margin: auto; padding: 0; overflow: hidden;
+  border: 1px solid color-mix(in srgb, currentColor 18%, transparent); border-radius: 14px;
+  color: var(--text-normal, var(--vscode-foreground, CanvasText));
+  background: var(--background-primary, var(--vscode-editor-background, Canvas));
+  box-shadow: 0 18px 70px #0005;
+}
+.flair-viewer[open] { display: block; }
+.flair-viewer::backdrop { background: #0005; }
+.flair-viewer-tools {
+  position: absolute; z-index: 3; top: 14px; right: 14px; display: flex; gap: 3px; padding: 5px;
+  border: 1px solid color-mix(in srgb, currentColor 14%, transparent); border-radius: 9px;
+  background: color-mix(in srgb, var(--background-primary, var(--vscode-editor-background, Canvas)) 92%, transparent);
+  box-shadow: 0 4px 18px #0002; backdrop-filter: blur(8px);
+}
+.flair-viewer-tools button { border-color: transparent; background: transparent; }
+.flair-viewport { position: absolute; inset: 0; overflow: hidden; cursor: grab; touch-action: none; }
+.flair-viewport.flair-dragging { cursor: grabbing; }
+.flair-svg-surface { position: absolute; top: 0; left: 0; max-width: none; max-height: none; transform-origin: 0 0; user-select: none; }
+.flair-viewer-status { position: absolute; bottom: 16px; left: 16px; right: 16px; padding: 8px; border-radius: 6px; background: Canvas; color: CanvasText; }
+.flair-context-menu {
+  position: fixed; z-index: 1000; min-width: 180px; max-width: calc(100vw - 16px); padding: 5px;
+  border: 1px solid color-mix(in srgb, currentColor 20%, transparent); border-radius: 8px;
+  color: var(--text-normal, var(--vscode-foreground, CanvasText));
+  background: var(--background-primary, var(--vscode-editor-background, Canvas)); box-shadow: 0 8px 28px #0003;
+}
+.flair-context-menu button {
+  display: block; width: 100%; text-align: left; padding: 7px 10px; border: 0; border-radius: 4px;
+  background: transparent; color: inherit; font: inherit; cursor: pointer;
+}
+.flair-context-menu button:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+.flair-sr-only {
+  position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important;
+  overflow: hidden !important; clip-path: inset(50%) !important; white-space: nowrap !important; border: 0 !important;
+}
+.flair-theme-preview { display: grid; gap: 8px; margin: 0 0 18px; font-size: 0.9em; color: var(--text-muted); }
+.flair-theme-swatches { display: flex; align-items: center; gap: 6px; }
+.flair-theme-swatches > span:first-child { width: 3rem; }
+.flair-theme-swatch { display: inline-block; width: 24px; height: 16px; border: 1px solid #8885; border-radius: 3px; }
+@media (hover: none) { .flair-diagram-tools { opacity: 1; pointer-events: auto; } }
+@media (max-width: 600px) { .flair-viewer { inset: 8px; width: calc(100% - 16px); height: calc(100% - 16px); } }
+@media (prefers-reduced-motion: reduce) { .flair-diagram-tools { transition: none; } }

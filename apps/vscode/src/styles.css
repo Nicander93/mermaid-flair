@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0 1.25rem;
+  color: var(--vscode-foreground, CanvasText);
+  background: var(--vscode-editor-background, Canvas);
+  font: var(--vscode-font-size, 13px) var(--vscode-font-family, system-ui, sans-serif);
+}
+
+.flair-preview {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1rem 0 3rem;
+}
+
+.flair-preview h1 {
+  margin: 0.5rem 0 1rem;
+  font-size: 1.35em;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.flair-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.flair-preview-header button {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  border: 1px solid var(--vscode-button-border, var(--vscode-widget-border, #888));
+  border-radius: 5px;
+  font: inherit;
+  color: var(--vscode-button-secondaryForeground, inherit);
+  background: var(--vscode-button-secondaryBackground, transparent);
+  cursor: pointer;
+}

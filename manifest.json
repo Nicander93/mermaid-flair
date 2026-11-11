@@ -1,0 +1,10 @@
+{
+  "id": "mermaid-flair",
+  "name": "Mermaid Flair",
+  "version": "0.5.2",
+  "minAppVersion": "1.9.14",
+  "description": "Style, enlarge, and export Mermaid diagrams in reading view.",
+  "author": "Nicander",
+  "isDesktopOnly": true,
+  "authorUrl": "https://github.com/Nicander93"
+}

@@ -1,0 +1,45 @@
+name: 问题反馈 / Bug report
+description: 报告图表渲染、安装或交互问题。
+title: "[Bug] "
+body:
+  - type: input
+    id: plugin_version
+    attributes:
+      label: Mermaid Flair 版本
+      placeholder: "例如 0.5.2"
+    validations:
+      required: true
+  - type: dropdown
+    id: host
+    attributes:
+      label: 编辑器
+      options:
+        - VS Code
+        - Cursor
+        - Obsidian
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境
+      description: 编辑器实际版本、操作系统、预览模式、主题和明暗模式。
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: 操作步骤与结果
+      description: 如何重现？期望看到什么，实际发生了什么？
+    validations:
+      required: true
+  - type: textarea
+    id: diagram
+    attributes:
+      label: 最小 Mermaid 代码
+      description: 请使用可公开的最小图例。
+      render: text
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 截图或补充信息

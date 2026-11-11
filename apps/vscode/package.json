@@ -1,0 +1,127 @@
+{
+  "name": "mermaid-flair",
+  "displayName": "Mermaid Flair",
+  "description": "Style, select, enlarge, and export Mermaid diagrams directly in Markdown previews.",
+  "publisher": "mermaid-flair",
+  "version": "0.5.2",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Visualization"
+  ],
+  "main": "./dist/extension.js",
+  "files": [
+    "dist/extension.js",
+    "dist/preview.js",
+    "dist/styles.css",
+    "dist/native-preview.js",
+    "dist/native-preview.css",
+    "THIRD_PARTY_NOTICES.txt",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
+  },
+  "contributes": {
+    "markdown.markdownItPlugins": true,
+    "markdown.previewScripts": [
+      "./dist/native-preview.js"
+    ],
+    "markdown.previewStyles": [
+      "./dist/native-preview.css"
+    ],
+    "commands": [
+      {
+        "command": "mermaidFlair.revealNativeSource",
+        "title": "Show Diagram Source",
+        "category": "Mermaid Flair"
+      },
+      {
+        "command": "mermaidFlair.openPreview",
+        "title": "Open Diagram Preview",
+        "icon": "$(graph)",
+        "category": "Mermaid Flair"
+      },
+      {
+        "command": "mermaidFlair.chooseTheme",
+        "title": "Choose Default Theme",
+        "category": "Mermaid Flair"
+      }
+    ],
+    "menus": {
+      "webview/context": [
+        {
+          "command": "mermaidFlair.revealNativeSource",
+          "when": "webviewSection == mermaid-flair",
+          "group": "navigation@1"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "mermaidFlair.revealNativeSource",
+          "when": "false"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "mermaidFlair.openPreview",
+          "when": "resourceLangId == markdown || resourceExtname == .md || resourceExtname == .markdown",
+          "group": "navigation@1"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Mermaid Flair",
+      "properties": {
+        "mermaidFlair.theme": {
+          "type": "string",
+          "enum": [
+            "sketch",
+            "modern",
+            "sketch-paper"
+          ],
+          "enumItemLabels": [
+            "Whiteboard",
+            "Clean",
+            "Paper"
+          ],
+          "enumDescriptions": [
+            "Soft categorical colors with hand-drawn outlines",
+            "Quiet blue, teal and lavender with clean outlines",
+            "Warm paper with muted earth and botanical colors"
+          ],
+          "default": "sketch",
+          "scope": "application",
+          "description": "Default diagram style."
+        },
+        "mermaidFlair.followHost": {
+          "type": "boolean",
+          "default": true,
+          "scope": "application",
+          "description": "Follow the editor’s light or dark color mode. When off, use the light palette."
+        },
+        "mermaidFlair.hoverToolbar": {
+          "type": "boolean",
+          "default": true,
+          "scope": "application",
+          "description": "Show diagram tools on hover or focus."
+        }
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nicander93/mermaid-flair.git"
+  },
+  "homepage": "https://github.com/Nicander93/mermaid-flair#readme",
+  "bugs": {
+    "url": "https://github.com/Nicander93/mermaid-flair/issues"
+  },
+  "author": "Nicander"
+}
